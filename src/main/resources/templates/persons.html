@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <title>Manage persons</title>
+</head>
+<body>
+<h1>Manage persons</h1>
+<table class="table" style="width: 80%;margin: auto">
+    <thead class="table-dark">
+    <tr>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Enabled</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="person: ${personsList}">
+        <tr>
+            <td th:text="${person.FirstName}">1</td>
+            <td th:text="${person.LastName}">Mark</td>
+            <td th:text="${person.email}">Otto</td>
+            <td th:text="${person.enabled}">@mdo</td>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
+</body>
+</html>
