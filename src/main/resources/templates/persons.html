@@ -18,6 +18,7 @@
         <th scope="col">Last name</th>
         <th scope="col">Email</th>
         <th scope="col">Enabled</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
@@ -27,9 +28,11 @@
             <td th:text="${person.LastName}">Mark</td>
             <td th:text="${person.email}">Otto</td>
             <td th:text="${person.enabled}">@mdo</td>
+            <td><a th:href="@{'/persons/delete/' + ${person.id}}">Delete</a></td>
         </tr>
     </th:block>
     </tbody>
+</table>
 </table>
 </body>
 </html>
