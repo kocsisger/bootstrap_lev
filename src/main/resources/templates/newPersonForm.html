@@ -7,12 +7,13 @@
     <title>Add new Person</title>
 </head>
 <body>
-<h1>Add new person</h1>
+<h1>[[${pageTitle}]]</h1>
 
 <form method="post"
       th:action="@{/persons/save}"
       th:object="${newPerson}"
       style="width: 40%;margin: auto">
+    <input type="hidden" th:field="*{id}">
     <div class="mb-3">
         <label for="firstNameInput" class="form-label">First name</label>
         <input type="text"

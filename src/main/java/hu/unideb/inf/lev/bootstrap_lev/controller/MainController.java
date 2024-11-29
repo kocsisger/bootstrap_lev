@@ -30,7 +30,15 @@ public class MainController {
 
     @GetMapping("/persons/new")
     public String newPerson(Model model){
-        model.addAttribute("newPerson",  new Person());
+        model.addAttribute("newPerson", new Person());
+        model.addAttribute("pageTitle", "Add new person");
+        return "newPersonForm";
+    }
+
+    @GetMapping("/persons/edit/{id}")
+    public String editPerson(@PathVariable Long id, Model model){
+        model.addAttribute("newPerson", personRepository.findById(id));
+        model.addAttribute("pageTitle", "Edit person");
         return "newPersonForm";
     }
 
