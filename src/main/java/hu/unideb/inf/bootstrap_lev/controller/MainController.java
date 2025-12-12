@@ -22,5 +22,12 @@ public class MainController {
         model.addAttribute("personsList", personRepository.findAll());
         return "persons";
     }
+
+    @GetMapping("/persons/new")
+    public String addNewPerson(Model model) {
+        model.addAttribute("newPerson", new Person());
+        return "newPersonForm";
+    }
+
 }
 
